@@ -1,0 +1,34 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "SomnifyDependencies",
+        "repositoryURL": "https://github.com/Somnify/Dependencies.git",
+        "state": {
+          "branch": null,
+          "revision": "9b83ce5548c7805cee9211cbfab5bf6faa8503e5",
+          "version": "1.2.1"
+        }
+      },
+      {
+        "package": "HealthCore",
+        "repositoryURL": "https://github.com/Somnify/HealthCore.git",
+        "state": {
+          "branch": null,
+          "revision": "c43b6fdbeaf31014fa3d7a9376d8a8a59abc6815",
+          "version": "1.0.1"
+        }
+      },
+      {
+        "package": "SleepCore",
+        "repositoryURL": "https://github.com/Somnify/SleepCore.git",
+        "state": {
+          "branch": null,
+          "revision": "eb1f823d22b85c5dfebd5fe3991b00ace26d968d",
+          "version": "1.0.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
