@@ -15,8 +15,8 @@
         "repositoryURL": "https://github.com/Somnify/HealthCore.git",
         "state": {
           "branch": null,
-          "revision": "c43b6fdbeaf31014fa3d7a9376d8a8a59abc6815",
-          "version": "1.0.1"
+          "revision": "1e1a8a23048fcb656c328a3538901deba74dd596",
+          "version": "1.0.2"
         }
       },
       {
@@ -24,8 +24,8 @@
         "repositoryURL": "https://github.com/Somnify/SleepCore.git",
         "state": {
           "branch": null,
-          "revision": "eb1f823d22b85c5dfebd5fe3991b00ace26d968d",
-          "version": "1.0.0"
+          "revision": "4d7046a1a4068f9c648d42d1f76b832d6c74f04a",
+          "version": "1.0.1"
         }
       }
     ]
