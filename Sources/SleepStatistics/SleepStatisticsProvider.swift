@@ -34,14 +34,7 @@ public final class SleepStatisticsProvider {
         self.sleepCoreProvider = SleepCoreProvider(healthCoreProvider: healthCoreProvider)
     }
 
-    private func getLastSleepIfNeeded() async throws -> Sleep? {
-        guard self.sleep == nil else {
-            return self.sleep
-        }
-
-        self.sleep = try await self.sleepCoreProvider.retrieveLastSleep()
-        return self.sleep
-    }
+    // MARK: - Public methods
 
     public func getLastSleepDateInterval(type: HKCategoryValueSleepAnalysis) async throws -> DateInterval? {
         _ = try await self.getLastSleepIfNeeded()
@@ -76,4 +69,15 @@ public final class SleepStatisticsProvider {
     public func getLastSleepPhasesData() async throws -> [SleepPhase]? {
         try await self.getLastSleepIfNeeded()?.phases
     }
+    
+    // MARK: - Private methods
+    
+    private func getLastSleepIfNeeded() async throws -> Sleep? {
+        guard self.sleep == nil else {
+            return self.sleep
+        }
+        self.sleep = try await self.sleepCoreProvider.retrieveLastSleep()
+        return self.sleep
+    }
+    
 }
