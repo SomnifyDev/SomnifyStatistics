@@ -21,7 +21,6 @@ struct ContentView: View {
 
     private func retrieveLastSleepInterval() async {
         do {
-            
             let sleepStatisticsProvider = SleepStatisticsProvider()
             let res = try await sleepStatisticsProvider.getDateInterval(type: .asleep)
             print(res)
