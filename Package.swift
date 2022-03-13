@@ -52,12 +52,14 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "SleepStatistics",
-            dependencies: []
+            dependencies: [
+                .product(name: "SleepCore", package: "SleepCore"),
+            ]
         ),
         .target(
             name: "WorkoutStatistics",
             dependencies: [
-                .product(name: "HealthCore", package: "HealthCore")
+                .product(name: "HealthCore", package: "HealthCore"),
             ]
         )
     ]
