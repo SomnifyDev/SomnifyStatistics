@@ -17,6 +17,8 @@ public final class SleepStatisticsProvider {
     private let sleepCoreProvider: SleepCoreProvider
     private var sleep: Sleep?
 
+    // MARK: - Init
+
     public init() {
         let neededDataTypes: Set<HealthCoreProvider.SampleType> = Set([
             .quantityType(forIdentifier: .heartRate),
