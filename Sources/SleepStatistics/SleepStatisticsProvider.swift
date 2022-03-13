@@ -20,7 +20,7 @@ public final class SleepStatisticsProvider {
         ])
         let healthCoreProvider = HealthCoreProvider(
             dataTypesToRead: neededDataTypes,
-            dataTypesToWrite: neededDataTypes
+            dataTypesToWrite: []
         )
 
         self.sleepCoreProvider = SleepCoreProvider(healthCoreProvider: healthCoreProvider)
