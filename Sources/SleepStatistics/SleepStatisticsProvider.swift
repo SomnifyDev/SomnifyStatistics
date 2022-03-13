@@ -8,6 +8,8 @@ public enum SleepStatisticsProviderError: Error {
     case unhandledError
 }
 
+// MARK: - SleepStatisticsProvider
+
 public final class SleepStatisticsProvider {
     private let sleepCoreProvider: SleepCoreProvider
 
