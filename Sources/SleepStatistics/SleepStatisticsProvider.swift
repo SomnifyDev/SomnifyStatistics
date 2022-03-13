@@ -5,7 +5,7 @@ import HealthKit
 // MARK: - SleepStatisticsProviderError
 
 public enum SleepStatisticsProviderError: Error {
-    case unhandledError
+    case notSupportedTypeError
 }
 
 // MARK: - SleepStatisticsProvider
@@ -37,22 +37,20 @@ public final class SleepStatisticsProvider {
     // MARK: - Public methods
 
     public func getLastSleepDateInterval(type: HKCategoryValueSleepAnalysis) async throws -> DateInterval? {
-        _ = try await self.getLastSleepIfNeeded()
+        try await self.getLastSleepIfNeeded()
 
         switch type {
         case .inBed:
             return self.sleep?.inbedInterval
         case .asleep:
             return self.sleep?.sleepInterval
-        case .awake:
-            throw SleepStatisticsProviderError.unhandledError
-        @unknown default:
-            throw SleepStatisticsProviderError.unhandledError
+        default:
+            throw SleepStatisticsProviderError.notSupportedTypeError
         }
     }
 
     public func getLastSleepHealthData(type: HKQuantityTypeIdentifier) async throws -> [SampleData]? {
-        _ = try await self.getLastSleepIfNeeded()
+        try await self.getLastSleepIfNeeded()
 
         switch type {
         case .heartRate:
@@ -62,7 +60,7 @@ public final class SleepStatisticsProvider {
         case .respiratoryRate:
             return self.sleep?.respiratoryData
         default:
-            throw SleepStatisticsProviderError.unhandledError
+            throw SleepStatisticsProviderError.notSupportedTypeError
         }
     }
 
@@ -71,7 +69,8 @@ public final class SleepStatisticsProvider {
     }
     
     // MARK: - Private methods
-    
+
+    @discardableResult
     private func getLastSleepIfNeeded() async throws -> Sleep? {
         guard self.sleep == nil else {
             return self.sleep
