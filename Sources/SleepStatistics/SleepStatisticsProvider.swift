@@ -35,7 +35,7 @@ public final class SleepStatisticsProvider {
         return self.sleep
     }
 
-    public func getDateInterval(type: HKCategoryValueSleepAnalysis) async throws -> DateInterval? {
+    public func getLastSleepDateInterval(type: HKCategoryValueSleepAnalysis) async throws -> DateInterval? {
         _ = try await self.getLastSleepIfNeeded()
 
         switch type {
@@ -50,7 +50,7 @@ public final class SleepStatisticsProvider {
         }
     }
 
-    public func getHealthData(type: HKQuantityTypeIdentifier) async throws -> [SampleData]? {
+    public func getLastSleepHealthData(type: HKQuantityTypeIdentifier) async throws -> [SampleData]? {
         _ = try await self.getLastSleepIfNeeded()
 
         switch type {
@@ -65,7 +65,7 @@ public final class SleepStatisticsProvider {
         }
     }
 
-    public func getPhasesData() async throws -> [SleepPhase]? {
+    public func getLastSleepPhasesData() async throws -> [SleepPhase]? {
         try await self.getLastSleepIfNeeded()?.phases
     }
 }
