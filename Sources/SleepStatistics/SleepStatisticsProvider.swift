@@ -2,6 +2,8 @@ import SleepCore
 import HealthCore
 import HealthKit
 
+// MARK: - SleepStatisticsProviderError
+
 public enum SleepStatisticsProviderError: Error {
     case unhandledError
 }
