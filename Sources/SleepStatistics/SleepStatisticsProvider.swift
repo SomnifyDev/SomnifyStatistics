@@ -11,8 +11,10 @@ public enum SleepStatisticsProviderError: Error {
 // MARK: - SleepStatisticsProvider
 
 public final class SleepStatisticsProvider {
-    private let sleepCoreProvider: SleepCoreProvider
 
+    // MARK: - Private properties
+
+    private let sleepCoreProvider: SleepCoreProvider
     private var sleep: Sleep?
 
     public init() {
