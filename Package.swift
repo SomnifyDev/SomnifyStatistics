@@ -34,15 +34,20 @@ let package = Package(
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
         .package(
-            name: "SleepCore",
-            url: "https://github.com/Somnify/SleepCore.git",
-            .exact("1.0.1")
+            name: "SomnifyDependencies",
+            url: "https://github.com/Somnify/SomnifyDependencies.git",
+            .exact("1.2.1")
         ),
         .package(
             name: "HealthCore",
             url: "https://github.com/Somnify/HealthCore.git",
+            .exact("1.0.4")
+        ),
+        .package(
+            name: "SleepCore",
+            url: "https://github.com/Somnify/SleepCore.git",
             .exact("1.0.2")
-        )
+        ),
     ],
 
     // MARK: - Targets
@@ -60,6 +65,7 @@ let package = Package(
             name: "WorkoutStatistics",
             dependencies: [
                 .product(name: "HealthCore", package: "HealthCore"),
+                .product(name: "SomnifyDependencies", package: "SomnifyDependencies")
             ]
         )
     ]
