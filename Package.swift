@@ -23,7 +23,8 @@ let package = Package(
             name: "SomnifyStatistics",
             targets: [
                 "SleepStatistics",
-                "WorkoutStatistics"
+                "WorkoutStatistics",
+                "HeartIndicator"
             ]
         ),
     ],
@@ -36,12 +37,12 @@ let package = Package(
         .package(
             name: "SomnifyDependencies",
             url: "https://github.com/Somnify/SomnifyDependencies.git",
-            .exact("1.2.1")
+            .branch("NewExtensions")
         ),
         .package(
             name: "HealthCore",
             url: "https://github.com/Somnify/HealthCore.git",
-            .exact("1.0.4")
+            .branch("HeartCore")
         ),
         .package(
             name: "SleepCore",
@@ -55,6 +56,13 @@ let package = Package(
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
+        .target(
+            name: "HeartIndicator",
+            dependencies: [
+                .product(name: "HealthCore", package: "HealthCore"),
+                .product(name: "SomnifyDependencies", package: "SomnifyDependencies")
+            ]
+        ),
         .target(
             name: "SleepStatistics",
             dependencies: [
