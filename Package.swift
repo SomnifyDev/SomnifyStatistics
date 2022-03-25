@@ -37,18 +37,13 @@ let package = Package(
         .package(
             name: "SomnifyDependencies",
             url: "https://github.com/Somnify/SomnifyDependencies.git",
-            .branch("NewExtensions")
+            .exact("1.2.2")
         ),
         .package(
             name: "HealthCore",
             url: "https://github.com/Somnify/HealthCore.git",
-            .branch("HeartCore")
-        ),
-        .package(
-            name: "SleepCore",
-            url: "https://github.com/Somnify/SleepCore.git",
-            .exact("1.0.2")
-        ),
+            .exact("1.0.5")
+        )
     ],
 
     // MARK: - Targets
@@ -66,7 +61,7 @@ let package = Package(
         .target(
             name: "SleepStatistics",
             dependencies: [
-                .product(name: "SleepCore", package: "SleepCore"),
+                .product(name: "HealthCore", package: "HealthCore"),
             ]
         ),
         .target(
