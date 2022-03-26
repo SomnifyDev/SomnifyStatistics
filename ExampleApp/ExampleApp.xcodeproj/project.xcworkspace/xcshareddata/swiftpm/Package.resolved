@@ -5,26 +5,17 @@
         "package": "HealthCore",
         "repositoryURL": "https://github.com/Somnify/HealthCore.git",
         "state": {
-          "branch": "HeartCore",
-          "revision": "513e8b3189e9962ac6c10f40bc027871903f537f",
+          "branch": "dev",
+          "revision": "18cd71b167d11d3b15902ea5724591711f935475",
           "version": null
-        }
-      },
-      {
-        "package": "SleepCore",
-        "repositoryURL": "https://github.com/Somnify/SleepCore.git",
-        "state": {
-          "branch": null,
-          "revision": "3dd561c178582f432e89e15f5cea82614f36b0a2",
-          "version": "1.0.2"
         }
       },
       {
         "package": "SomnifyDependencies",
         "repositoryURL": "https://github.com/Somnify/SomnifyDependencies.git",
         "state": {
-          "branch": "NewExtensions",
-          "revision": "b832828abd2feb8fdc84d25bfc9c0f8d7c853b3f",
+          "branch": "dev",
+          "revision": "d1ee71c91b05bedc8bdb35cb51b7046e4e7b8ea2",
           "version": null
         }
       }

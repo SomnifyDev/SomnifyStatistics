@@ -1,5 +1,6 @@
 import Foundation
 import HealthCore
 
-public struct WorkoutStatisticsProvider {
+public final class WorkoutStatisticsProvider: ObservableObject {
+
 }

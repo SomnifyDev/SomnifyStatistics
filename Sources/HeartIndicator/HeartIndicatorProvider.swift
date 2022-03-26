@@ -11,7 +11,7 @@ public typealias SDNNIndicatorValue = Double
 
 // MARK: - HeartIndicatorProvider
 
-public final class HeartIndicatorProvider {
+public final class HeartIndicatorProvider: ObservableObject {
 
     // MARK: - Private properties
 

@@ -10,7 +10,7 @@ public enum SleepStatisticsProviderError: Error {
 
 // MARK: - SleepStatisticsProvider
 
-public final class SleepStatisticsProvider {
+public final class SleepStatisticsProvider: ObservableObject {
 
     // MARK: - Private properties
 
