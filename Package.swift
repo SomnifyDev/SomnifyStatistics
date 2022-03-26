@@ -37,12 +37,12 @@ let package = Package(
         .package(
             name: "SomnifyDependencies",
             url: "https://github.com/Somnify/SomnifyDependencies.git",
-            .exact("1.2.2")
+            .branch("dev")
         ),
         .package(
             name: "HealthCore",
             url: "https://github.com/Somnify/HealthCore.git",
-            .exact("1.0.5")
+            .branch("dev")
         )
     ],
 
