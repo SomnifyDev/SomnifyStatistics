@@ -5,8 +5,8 @@
         "package": "HealthCore",
         "repositoryURL": "https://github.com/Somnify/HealthCore.git",
         "state": {
-          "branch": "dev",
-          "revision": "18cd71b167d11d3b15902ea5724591711f935475",
+          "branch": "HeartbeatSeriesImprovements",
+          "revision": "1051539140c35f7accaaa46875f89af249092ed8",
           "version": null
         }
       },

@@ -42,7 +42,7 @@ let package = Package(
         .package(
             name: "HealthCore",
             url: "https://github.com/Somnify/HealthCore.git",
-            .branch("dev")
+            .branch("HeartbeatSeriesImprovements")
         )
     ],
 
