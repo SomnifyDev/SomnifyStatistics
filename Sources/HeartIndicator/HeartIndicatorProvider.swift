@@ -51,11 +51,12 @@ public final class HeartIndicatorProvider: ObservableObject {
     ///
     /// More accurate indicator im comparison with `SDNN`. Recommended to be used to make analysis on the short time interval
     public func calculateRMSSD(for dateInterval: DateInterval) async throws -> Double? {
-        guard let heartbeatSeries = try await heartCoreProvider.getHeartbeatSeries(during: dateInterval) else {
+        guard let heartbeatSeriesInSeconds = try await heartCoreProvider.getHeartbeatSeries(during: dateInterval) else {
             return nil
         }
+        let heartbeatSeriesInMS: [[HeartbeatSeries]] = heartbeatSeriesInSeconds.map { $0.map { HeartbeatSeries(timeSinceSeriesStart: $0.timeSinceSeriesStart * 1000, precededByGap: $0.precededByGap) }}
         var squaredTimeIntervalsDifferences: [Double] = []
-        heartbeatSeries.forEach { externalSeries in
+        heartbeatSeriesInMS.forEach { externalSeries in
             var internalIndex: Int = 1
             while internalIndex < externalSeries.count {
                 let isPrecededByGap = externalSeries[internalIndex].precededByGap
