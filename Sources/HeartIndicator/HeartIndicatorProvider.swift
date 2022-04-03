@@ -57,13 +57,13 @@ public final class HeartIndicatorProvider: ObservableObject {
         let heartbeatSeriesInMS: [[HeartbeatSeries]] = heartbeatSeriesInSeconds.map { $0.map { HeartbeatSeries(timeSinceSeriesStart: $0.timeSinceSeriesStart * 1000, precededByGap: $0.precededByGap) }}
         var squaredTimeIntervalsDifferences: [Double] = []
         heartbeatSeriesInMS.forEach { externalSeries in
-            var internalIndex: Int = 1
+            var internalIndex: Int = 2
             while internalIndex < externalSeries.count {
-                let isPrecededByGap = externalSeries[internalIndex].precededByGap
+                let isPrecededByGap = externalSeries[internalIndex].precededByGap || externalSeries[internalIndex - 1].precededByGap
                 if !isPrecededByGap {
-                    let currentValue = externalSeries[internalIndex].timeSinceSeriesStart
-                    let previousValue = externalSeries[internalIndex - 1].timeSinceSeriesStart
-                    let squaredTimeIntervalsDifference = pow(currentValue - previousValue, 2)
+                    let rr1 = externalSeries[internalIndex - 1].timeSinceSeriesStart - externalSeries[internalIndex - 2].timeSinceSeriesStart
+                    let rr2 = externalSeries[internalIndex].timeSinceSeriesStart - externalSeries[internalIndex - 1].timeSinceSeriesStart
+                    let squaredTimeIntervalsDifference = pow(rr1 - rr2, 2)
                     squaredTimeIntervalsDifferences.append(squaredTimeIntervalsDifference)
                 }
                 internalIndex += 1
