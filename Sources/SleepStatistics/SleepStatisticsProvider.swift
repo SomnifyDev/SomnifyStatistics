@@ -75,7 +75,7 @@ public final class SleepStatisticsProvider: ObservableObject {
         guard self.sleep == nil else {
             return self.sleep
         }
-        self.sleep = try await self.sleepCoreProvider.retrieveLastSleep()
+        self.sleep = try await self.sleepCoreProvider.detectLastSleep(author: .all, shouldSaveToHealthKit: false)
         return self.sleep
     }
     
